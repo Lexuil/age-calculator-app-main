@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import BirthdayForm from './components/BirthdayForm'
+import InfoPanel from './components/InfoPanel'
 import Footer from './components/Footer'
 
 function App() {
@@ -18,15 +19,7 @@ function App() {
       <main>
         <BirthdayForm setInfo={setInfo} />
 
-        <p>
-          <span>{years}</span> years
-        </p>
-        <p>
-          <span>{months}</span> months
-        </p>
-        <p>
-          <span>{days}</span> days
-        </p>
+        <InfoPanel days={days} months={months} years={years}/>
       </main>
 
       <Footer />
