@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react'
 function BirthdayForm({ setInfo }) {
   const today = new Date()
 
-  const [day, setDay] = useState(today.getDate())
-  const [month, setMonth] = useState(today.getMonth() + 1)
-  const [year, setYear] = useState(today.getFullYear())
+  const [day, setDay] = useState()
+  const [month, setMonth] = useState()
+  const [year, setYear] = useState()
   const [dayError, setDayError] = useState('')
   const [monthError, setMonthError] = useState('')
   const [yearError, setYearError] = useState('')
@@ -66,7 +66,7 @@ function BirthdayForm({ setInfo }) {
             name='day'
             min={1}
             max={31}
-            value={day}
+            value={day ?? ''}
             className={dayError ? 'error-input' : ''}
             onChange={(e) => setDay(e.target.value)}
           />
@@ -82,7 +82,7 @@ function BirthdayForm({ setInfo }) {
             name='month'
             min={1}
             max={12}
-            value={month}
+            value={month ?? ''}
             className={monthError ? 'error-input' : ''}
             onChange={(e) => setMonth(e.target.value)}
           />
@@ -96,7 +96,7 @@ function BirthdayForm({ setInfo }) {
             id='year'
             type='number'
             name='year'
-            value={year}
+            value={year ?? ''}
             className={yearError ? 'error-input' : ''}
             onChange={(e) => setYear(e.target.value)}
           />
